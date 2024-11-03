@@ -180,11 +180,11 @@ class FinancialCalculator:
             result = number1 / number2
             result = result.quantize(Decimal('1.0000000000'), rounding=ROUND_HALF_UP)
 
-        min_value = Decimal('-1_000_000_000_000.000000')
-        max_value = Decimal('1_000_000_000_000.000000')
+        min_value = Decimal('-100_000_000_000_000.000000')
+        max_value = Decimal('100_000_000_000_000.000000')
 
         if result < min_value or result > max_value:
-            self.result_label.config(text="Переполнение диапазона [-1e12, 1e12] в процессе вычислений!")
+            self.result_label.config(text="Переполнение допустимого диапазона в процессе вычислений!")
             return None
         return result
 
